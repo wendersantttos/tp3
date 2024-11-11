@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    
+    <!-- Link para um arquivo de estilo externo (opcional) -->
+    <!-- <link rel="stylesheet" href="caminho_para_seus_estilos.css"> -->
+    
+    <style>
+        body {
+            text-align: center; /* Centralizar o conteúdo */
+            background-color: #f4f4f4; /* Cor de fundo para melhor contraste */
+        }
+
+        .produto {
+            
+            display: inline-block; /* Exibir produtos em linha */
+            margin: 20px; /* Espaçamento entre produtos */
+            /* Alinhar texto à esquerda dentro de cada produto */
+            border: 1px solid #ddd; /* Borda ao redor de cada produto */
+            padding: 10px; /* Espaçamento interno dentro de cada produto */
+            width: 280px; /* Largura fixa para cada produto (ajuste conforme necessário) */
+            max-height: 100%; 
+            overflow: hidden;
+            border-radius: 10px;
+            vertical-align: top; /* Alinhar na parte superior do contêiner pai */
+            box-sizing: border-box; /* Incluir borda e padding na largura e altura total */
+        }
+
+        .descricao-produto {
+        max-height: 100%; /* Altura máxima para a descrição do produto (ajuste conforme necessário) */
+        overflow-y: auto; /* Adiciona rolagem vertical caso a descrição seja maior que a altura máxima */
+        word-wrap: break-word; /* Permite que palavras longas quebrem e continuem em uma nova linha */
+    }
+
+        .imgproduto {
+            max-width: 100%; /* Imagens dentro do produto não ultrapassam a largura do contêiner */
+            height: 200px; /* Mantém a proporção da imagem */
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: rgb(224, 193, 203);
+            color: salmon;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: rgb(252, 94, 147);
+        }
+
+        .search-button {
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Portfólio</h1>
+
+    <div class="search-container">
+        <form method="get" action="{% url 'produtos' %}">
+            <input type="text" name="q" placeholder="Pesquisar por nome">
+            <button type="submit" class="search-button">Pesquisar</button>
+        </form>
+    </div>
+
+    {% for produto in lista_de_produtos %}
+    <div class="produto">
+        <img class="imgproduto" src="{{ produto.imagem.url }}" alt="{{ produto.imagem }}">
+        <h4>{{ produto.nome }}</h4>
+        <p class=".descricao-produto">{{ produto.descricao }}</p>
+        <h4 style="font-weight: bold; font-family: cursive;">R$ {{ produto.preco }}</h4>
+    </div>
+    {% endfor %}
+
+
+    
+
+    <!-- Adicione mais produtos conforme necessário -->
+
+</body>
+</html>
+
+{% endblock %}
