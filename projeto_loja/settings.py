@@ -15,7 +15,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECURE_SSL_REDIRECT = True # Força o redirecionamento para HTTPS
+SECURE_SSL_REDIRECT = False
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')  # Informa ao Django que está atrás de um proxy que usa HTTPS
 
@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-tf+q^0g_^pkp2_-r3r2*y2=g2$l8_&_l89+0yhf0e2-zbg_6q!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
