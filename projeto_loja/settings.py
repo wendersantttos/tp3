@@ -26,6 +26,11 @@ SECURE_HSTS_SECONDS = 31536000  # Ativa HTTP Strict Transport Security (HSTS)
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 
+
+# Permitindo cookies para HTTP e HTTPS
+#SESSION_COOKIE_SECURE = False
+#CSRF_COOKIE_SECURE = False
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 

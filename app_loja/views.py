@@ -26,6 +26,10 @@ def produtos(request):
 def contato(request):
     return render(request, 'contato.html')
 
+
+def politica_seguranca(request):
+    return render(request, 'politica_seguranca.html')
+
 def quemsomos(request):
     return render(request, 'quemsomos.html')
 

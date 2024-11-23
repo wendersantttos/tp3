@@ -83,7 +83,7 @@
             <a class="nav-link {% if request.path == '/contato/' %}active{% endif %}" href="{% url 'contato' %}">Contato</a>
           </li>
         </ul>
-
+      
         
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
@@ -148,6 +148,12 @@
                 </a>
               </li>
 
+              <li class="nav-item">
+                <a class="nav-link {% if request.path == '/politica-seguranca/' %}active{% endif %}" href="{% url 'politica_seguranca' %}">
+                    Política de Segurança
+                </a>
+            </li>
+            
 
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == '/login/' %}active{% endif %}" href="{% url 'login' %}">
